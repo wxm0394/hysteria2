@@ -1,0 +1,17 @@
+# Mihomo / Clash Verge node template for Hysteria 2.
+# Copy into the `proxies:` list of your profile and replace the placeholders.
+# Do not commit real values.
+proxies:
+  - name: "HY2-Node"
+    type: hysteria2
+    server: YOUR_SERVER_IP_OR_DOMAIN
+    port: 8443
+    password: "YOUR_LONG_RANDOM_PASSWORD"
+    sni: www.bing.com
+    # Test only: skips CA validation for the self-signed certificate.
+    skip-cert-verify: true
+    # After the first successful test, prefer pinning the certificate instead of skipping checks.
+    # Confirm the exact field name in the mihomo docs for hysteria2 before enabling:
+    # fingerprint: "SHA256_OF_SERVER_CERT"
+    # Hysteria 2 runs over UDP/QUIC. Salamander obfuscation makes the server incompatible with
+    # standard QUIC; leave it off until the basic connection works.
